@@ -68,20 +68,20 @@
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="ui-widgets-pricing.html" class="submenu-link">Data Buku</a>
+                            <a href="{{ url('admin/buku') }}" class="submenu-link">Data Buku</a>
 
                         </li>
                         <li class="submenu-item  ">
-                            <a href="ui-widgets-pricing.html" class="submenu-link">Data Kategori</a>
+                            <a href="{{ url('admin/kategori') }}" class="submenu-link">Data Kategori</a>
 
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="ui-widgets-todolist.html" class="submenu-link">Data peminjaman</a>
+                            <a href="{{ url('admin/peminjaman') }}" class="submenu-link">Data peminjaman</a>
 
                         </li>
                         <li class="submenu-item  ">
-                            <a href="ui-widgets-todolist.html" class="submenu-link">Data pengembalian</a>
+                            <a href="{{ url('admin/pengembalian') }}" class="submenu-link">Data pengembalian</a>
 
                         </li>
 
