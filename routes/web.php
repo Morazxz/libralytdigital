@@ -33,6 +33,27 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.index');
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::get('/admin/profile', function () {
+    return view('admin.profile');
+});
+Route::get('/admin/user', function () {
+    return view('admin.index_user');
+});
+Route::get('/admin/user/create', function () {
+    return view('admin.create_user');
+});
+Route::get('/admin/user/edit', function () {
+    return view('admin.edit_user');
+});
+Route::get('/peminjam/daftar_buku', function () {
+    return view('peminjam.daftar_buku');
+});
+Route::get('/peminjam/buku_peminjam', function () {
+    return view('peminjam.buku_peminjam');
+});
+Route::get('/peminjam/dashboard', function () {
+    return view('peminjam.dashboard');
 });
