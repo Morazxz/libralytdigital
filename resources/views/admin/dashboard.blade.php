@@ -5,7 +5,7 @@
             <i class="bi bi-justify fs-3"></i>
         </a>
         <div class="page-heading">
-            <h3>haloo admin</h3>
+            <h3>hallo admin</h3>
         </div>
         <div class="card">
             <div class="card-body">
@@ -39,7 +39,7 @@
                     </tbody>
                   </table>
             </div>
-          </div>
+        </div>
     </header>
 
 

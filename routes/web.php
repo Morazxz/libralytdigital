@@ -90,6 +90,13 @@ Route::prefix('peminjam')->middleware(['auth','auth.peminjam'])->group(function 
     //ini route khusus untuk peminjam
 });
 
+//route buku
+Route::resource('buku', 'App\Http\Controllers\BukuController');
+
+//route kategori
+Route::resource('/kategori', \App\Http\Controllers\KategoriController::class);
+
+
 Route::get('logout',function(){
 
    Auth::logout();
