@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +24,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('auth.Login');
 });
+
+Route::post('/login', [LoginController::class, 'index']);
 
 Route::get('/register', function () {
     return view('register');
@@ -68,11 +71,11 @@ Route::get('/admin/kategori', function () {
 Route::get('/admin/kategori/create', function () {
     return view('admin.create_data_kategori');
 });
-Route::get('/admin/peminjaman', function () {
-    return view('admin.data_peminjaman');
+Route::get('/admin/peminjam', function () {
+    return view('admin.data_peminjam');
 });
-Route::get('/admin/peminjaman/create', function () {
-    return view('admin.create_data_peminjaman');
+Route::get('/admin/peminjam/create', function () {
+    return view('admin.create_data_peminjam');
 });
 Route::get('/admin/pengembalian', function () {
     return view('admin.data_pengembalian');
@@ -80,5 +83,18 @@ Route::get('/admin/pengembalian', function () {
 Route::get('/admin/pengembalian/create', function () {
     return view('admin.create_data_pengembalian');
 });
+Route::prefix('petugas')->middleware(['auth','auth.petugas'])->group(function () {
+    //ini route khusus untuk petugas
+});
+Route::prefix('peminjam')->middleware(['auth','auth.peminjam'])->group(function () {
+    //ini route khusus untuk peminjam
+});
+
+Route::get('logout',function(){
+
+   Auth::logout();
+
+});
 
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
