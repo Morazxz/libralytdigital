@@ -4,6 +4,9 @@
         <a href="#" class="burger-btn d-block d-xl-none">
             <i class="bi bi-justify fs-3"></i>
         </a>
+        <div class="page-heading">
+            <h3>halo admin</h3>
+        </div>
         <div class="card">
             <div class="card-body">
                 <table class="table">
@@ -39,9 +42,7 @@
           </div>
     </header>
 
-    <div class="page-heading">
-        <h3>halo admin</h3>
-    </div>
+
     <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-12">
