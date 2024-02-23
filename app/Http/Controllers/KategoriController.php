@@ -2,27 +2,54 @@
 
 namespace App\Http\Controllers;
 
- //import Model "Kategori"
- use App\Models\Kategoris;
-
- //returm type View
- use Illuminate\View\View;
-
+use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+//return type View
+use Illuminate\View\View;
+
+
 
 class KategoriController extends Controller
 {
-   /**
-    * index
-    *
-    * @return View
-    */
-    public function index(): View
-    {
-        //get kategori
-        $kategori = Kategoris::latest()->paginate(5);
+    //public function index(){
+    //    return view('kategori.index');
+    //}
 
-        //return view with kategori
-        return view('kategori.index', compact('kategoris'));
+    public function index()
+    {
+        $kategori = Kategori::latest();
+
+        $posts = $kategori->paginate(5);
+        return view('kategori.index', compact('posts'));
     }
+
+    public function create()
+    {
+        return view('kategori.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request,[
+            'nm_kategori' => 'required',
+        ]);
+        $model = Kategori::create([
+            'nm_kategori' => $request->nm_kategori,
+        ]);
+        return Redirect::route('kategori.index',$model)->with('success', 'Data Berhasil');{
+        }
+    }
+
+    public function edit($id)
+    {
+        $model = Kategori::find($id);
+        return view('kategori.edit', compact('model'));
+    }
+        //public function destroy($id): RedirectResponse{
+        //$post = Post::findorFail($id);
+        //$post->delete();
+        //return Redirect::route('post.index')->with('success', 'Data Berhasil');
+        //{
+        //}
 }

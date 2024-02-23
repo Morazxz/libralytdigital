@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -9,6 +9,7 @@ use App\Http\Controllers\PeminjamController;
 use Illuminate\Support\Facades\DB;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -33,9 +34,11 @@ Route::get('/about', function () {
 
 
 
-
-Route::get('/login', [LoginController::class, 'auth.login'])->name('login');
-Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
+Route::get('/login', function () {
+    return view('auth.login');
+});
+// Route::get('/login', [LoginController::class, 'auth.login'])->name('login');
+Route::post('/login-proses', [LoginController::class, 'loginProses']);
 
 Route::get('/register', function () {
     return view('auth.register');
@@ -70,12 +73,10 @@ Route::get('/admin/buku', function () {
 Route::get('/admin/buku/create', function () {
     return view('admin.create_data_buku');
 });
-Route::get('/admin/kategori', function () {
-    return view('admin.data_kategori');
-});
-Route::get('/admin/kategori/create', function () {
-    return view('admin.create_data_kategori');
-});
+//route resource
+Route::resource('/kategori',\App\Http\Controllers\KategoriController::class);
+Route::resource('/buku',\App\Http\Controllers\BukuController::class);
+
 Route::get('/admin/peminjam', function () {
     return view('admin.data_peminjam');
 });
@@ -98,8 +99,6 @@ Route::prefix('peminjam')->middleware(['auth','auth.peminjam'])->group(function 
 //route buku
 Route::resource('buku', 'App\Http\Controllers\BukuController');
 
-//route kategori
-Route::resource('/kategori', \App\Http\Controllers\KategoriController::class);
 
 
 Route::get('logout',function(){

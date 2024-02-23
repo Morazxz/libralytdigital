@@ -11,7 +11,7 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
-    public function login_proses(Request $request)
+    public function loginProses(Request $request)
     {
         $request->validate([
             'email' => 'required',
