@@ -13,6 +13,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
+                <a href="" class="btn btn-md btn-primary">KATEGORI</a>
                 <div>
                     <h3 class="text-center my-4">Tutorial Laravel 10 untuk Pemula</h3>
                     <h5 class="text-center"><a href="https://santrikoding.com">www.santrikoding.com</a></h5>

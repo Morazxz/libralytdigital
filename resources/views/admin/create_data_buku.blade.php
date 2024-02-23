@@ -63,6 +63,10 @@
                                 <label for="disabledInput">Alamat</label>
                                 <input type="text" class="form-control" id="" placeholder="Alamat">
                             </div>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
                     </div>
                 </div>

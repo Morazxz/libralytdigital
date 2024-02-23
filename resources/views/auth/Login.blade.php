@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="post" action="/login">
+                    <form method="post" action="{{ route('login-proses') }}">
                         @csrf
 
                         <div class="row mb-3">

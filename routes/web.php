@@ -1,6 +1,12 @@
 <?php
-
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamController;
+use Illuminate\Support\Facades\DB;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,14 +32,13 @@ Route::get('/about', function () {
 
 
 
-Route::get('/login', function () {
-    return view('auth.Login');
-});
 
-Route::post('/login', [LoginController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'auth.login'])->name('login');
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
 
 Route::get('/register', function () {
-    return view('register');
+    return view('auth.register');
 });
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');

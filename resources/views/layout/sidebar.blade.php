@@ -63,13 +63,17 @@
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/user') }}" class="submenu-link">Data User</a>
-
+                            <a href="{{ url('admin/user') }}" class="submenu-link">
+                            <i class="bi bi-people-fill"></i>
+                            <span>Data User</span>
+                            </a>
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/buku') }}" class="submenu-link">Data Buku</a>
-
+                            <a href="{{ url('admin/buku') }}" class="submenu-link">
+                                <i class="bi bi-book-half"></i>
+                                <span>Data Buku</span>
+                            </a>
                         </li>
                         <li class="submenu-item  ">
                             <a href="{{ url('admin/kategori') }}" class="submenu-link">Data Kategori</a>
@@ -89,10 +93,10 @@
 
 
                 </li>
-                <li class="sidebar-title">Misc</li>
+
                 <li class="sidebar-item">
                     <a href="{{ url('admin/profile') }}" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-person-circle"></i>
                         <span>Profile</span>
                     </a>
 
@@ -100,7 +104,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a href="index.html" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-box-arrow-in-right"></i>
                         <span>Logout</span>
                     </a>
 

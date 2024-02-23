@@ -23,6 +23,6 @@ class KategoriController extends Controller
         $kategori = Kategoris::latest()->paginate(5);
 
         //return view with kategori
-        return view('kategori.index', compact('kategori'));
+        return view('kategori.index', compact('kategoris'));
     }
 }
