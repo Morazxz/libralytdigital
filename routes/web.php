@@ -34,15 +34,11 @@ Route::get('/about', function () {
 
 
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::get('home', function () {
+    return view('login');
 });
-// Route::get('/login', [LoginController::class, 'auth.login'])->name('login');
-Route::post('/login-proses', [LoginController::class, 'loginProses']);
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
@@ -73,9 +69,6 @@ Route::get('/admin/buku', function () {
 Route::get('/admin/buku/create', function () {
     return view('admin.create_data_buku');
 });
-//route resource
-Route::resource('/kategori',\App\Http\Controllers\KategoriController::class);
-Route::resource('/buku',\App\Http\Controllers\BukuController::class);
 
 Route::get('/admin/peminjam', function () {
     return view('admin.data_peminjam');
@@ -95,9 +88,6 @@ Route::prefix('petugas')->middleware(['auth','auth.petugas'])->group(function ()
 Route::prefix('peminjam')->middleware(['auth','auth.peminjam'])->group(function () {
     //ini route khusus untuk peminjam
 });
-
-//route buku
-Route::resource('buku', 'App\Http\Controllers\BukuController');
 
 
 

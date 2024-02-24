@@ -29,45 +29,47 @@
                     <h4 class="card-title">Create User</h4>
                 </div>
 
-                <div class="card-body">
+                <iv class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="basicInput">Basic Input</label>
-                                <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                <label for="basicInput">Username</label>
+                                <input type="text" class="form-control" id="basicInput" placeholder="Username">
                             </div>
 
                             <div class="form-group">
-                                <label for="helpInputTop">Input text with help</label>
-                                <small class="text-muted">eg.<i>someone@example.com</i></small>
+                                <label for="helpInputTop">Password</label>
                                 <input type="text" class="form-control" id="helpInputTop">
                             </div>
 
                             <div class="form-group">
-                                <label for="helperText">With Helper Text</label>
-                                <input type="text" id="helperText" class="form-control" placeholder="Name">
-                                <p><small class="text-muted">Find helper text here for given textbox.</small></p>
+                                <label for="helperText">Email</label>
+                                <small class="text-muted">eg.<i>someone@example.com</i></small>
+                                <input type="text" id="helperText" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="disabledInput">Disabled Input</label>
-                                <input type="text" class="form-control" id="disabledInput" placeholder="Disabled Text"
-                                    disabled>
+                                <label for="disabledInput">Nama</label>
+                                <input type="text" class="form-control" id="" placeholder="Name">
                             </div>
                             <div class="form-group">
-                                <label for="readonlyInput">Readonly Input</label>
+                                <label for="readonlyInput">No telp</label>
                                 <input type="text" class="form-control" id="readonlyInput" readonly="readonly"
                                     value="You can't update me :P">
                             </div>
 
                             <div class="form-group">
-                                <label for="disabledInput">Static Text</label>
-                                <p class="form-control-static" id="staticInput">email@mazer.com</p>
+                                <label for="disabledInput">Alamat</label>
+                                <input type="text" class="form-control" id="" placeholder="Alamat">
                             </div>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
                     </div>
-                </div>
+                </div>zz
             </div>
         </section>
     </div>
