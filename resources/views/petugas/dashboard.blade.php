@@ -26,7 +26,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <h5 class="card-title ">
-                                    ADMIN
+                                    Petugas
                                 </h5>
                                 <a href="{{ url('admin/dashboard/create') }}" class="btn btn-primary">Tambah User</a>
                             </div>

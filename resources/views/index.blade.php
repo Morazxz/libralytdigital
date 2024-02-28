@@ -87,7 +87,7 @@
                     <div>
                         <h1>Selamat Datang</h1>
                         <h2>Di Perpustakaan Digital RBOOKS</h2>
-                        <a href="/login" class="btn-get-started scrollto">Login</a>
+                        <a href="{{ route('login') }}" class="btn-get-started scrollto">Login</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
