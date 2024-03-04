@@ -29,8 +29,9 @@
                     <h5 class="card-title ">
                         Data User
                     </h5>
-                    <a href="{{ url('admin/user/create') }}" class="btn btn-primary">Tambah User</a>
+                    <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User</a>
                 </div>
+            
                 <div class="card-body">
                     <div class="table-responsive datatable-minimal">
                         <table class="table table-striped" id="table2">
@@ -38,22 +39,23 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>City</th>
+                                    <th>Alamat</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Emmanuel</td>
-                                    <td>eget.lacus.Mauris@feugiatSednec.org</td>
-                                    <td>(016977) 8208</td>
-                                    <td>Saint-Remy-Geest</td>
-                                    <td>
-                                        <a href="edit_user.html" class="btn btn-primary">Edit</a>
-                                        <a href="delete_user.html" class="btn btn-danger">Delete</a>
-                                    </td>
-                                </tr>
+                                @forelse ($model as $item)
+                                    <tr>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->alamat }}</td>
+                                        <td>
+                                            <a href="edit_user.html" class="btn btn-primary">Edit</a>
+                                            <a href="delete_user.html" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

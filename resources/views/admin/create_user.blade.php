@@ -29,48 +29,60 @@
                     <h4 class="card-title">Create User</h4>
                 </div>
 
-                <iv class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="basicInput">Username</label>
-                                <input type="text" class="form-control" id="basicInput" placeholder="Username">
-                            </div>
+                <div class="card-body">
+                    <form action="{{ route('user.store') }}" method="post">
+                        @method('POST')
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Nama</label>
+                                    <input type="text" name="name" class="form-control" id="basicInput"
+                                        placeholder="Username">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="helpInputTop">Password</label>
-                                <input type="text" class="form-control" id="helpInputTop">
-                            </div>
+                                <div class="form-group">
+                                    <label for="helperText">Email</label>
+                                    <small class="text-muted">eg.<i>someone@example.com</i></small>
+                                    <input type="text" name="email" id="helperText" class="form-control"
+                                        placeholder="Email">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="helperText">Email</label>
-                                <small class="text-muted">eg.<i>someone@example.com</i></small>
-                                <input type="text" id="helperText" class="form-control" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="disabledInput">Nama</label>
-                                <input type="text" class="form-control" id="" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="readonlyInput">No telp</label>
-                                <input type="text" class="form-control" id="readonlyInput" readonly="readonly"
-                                    value="You can't update me :P">
+                                <div class="form-group">
+                                    <label for="helpInputTop">Password</label>
+                                    <input type="password" name="password" class="form-control" id="helpInputTop">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="helpInputTop">Role</label>
+                                    <select name="role" class="form-control" id="helpInputTop">
+                                        <option value="">pilih akses</option>
+                                        <option value="admin">admin</option>
+                                        <option value="peminjam">peminjam</option>
+                                        <option value="petugas">petugas</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div class="form-group">
                                 <label for="disabledInput">Alamat</label>
                                 <input type="text" class="form-control" id="" placeholder="Alamat">
+                                @error('alamat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
-                    </div>
-                </div>zz
+                    </form>
+                </div>
             </div>
-        </section>
+    </div>
+    </section>
     </div>
 @endsection

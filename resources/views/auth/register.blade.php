@@ -18,28 +18,28 @@
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Name">
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Name">
                     </div>
                     <div class="mb-3">
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Email">
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="alamat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="alamat">
+                        <input type="text" name="alamat" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="alamat">
                     </div>
 
                     <div class="mb-3">
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="Password">
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password_confirmation" class="form-control" id="exampleInputPassword1"
-                            placeholder="Confirm Password">
+                        <input type="password" name="password_confirmation" class="form-control"
+                            id="exampleInputPassword1" placeholder="Confirm Password">
                     </div>
                     <div class="d-flex justify-content-center mb-3">
-                        <button type="submit" class="btn btn-secondary mx-3" style="border-radius: 7px">Daftar</button>
-                        <a class="btn btn-secondary" style="border-radius: 7px" href="{{ route('login') }}">Login</a>
+                        <button type="submit" class="btn btn-primary" style="border-radius: 7px">Daftar</button>
                     </div>
                     <div>
                     </div>

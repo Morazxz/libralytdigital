@@ -38,7 +38,7 @@ Route::get('/about', function () {
 
 
 Route::get('home', function () {
-    return view('login');
+    return view('index');
 });
 
 
@@ -47,9 +47,6 @@ Route::get('/admin/dashboard', function () {
 });
 Route::get('/admin/profile', function () {
     return view('admin.profile');
-});
-Route::get('/admin/user', function () {
-    return view('admin.index_user');
 });
 Route::get('/admin/user/create', function () {
     return view('admin.create_user');
@@ -75,7 +72,7 @@ Route::get('/admin/buku/create', function () {
 
 Route::get('/admin/peminjam', function () {
     return view('admin.data_peminjam');
-}); 
+});
 Route::get('/admin/peminjam/create', function () {
     return view('admin.create_data_peminjam');
 });
@@ -86,6 +83,7 @@ Route::get('/admin/pengembalian/create', function () {
     return view('admin.create_data_pengembalian');
 });
 Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function () {
+    Route::resource('user', UserController::class);
     Route::get('beranda', [BerandaAdminController::class, 'index'])->name('admin.beranda');
 });
 Route::prefix('petugas')->middleware(['auth','auth.petugas'])->group(function () {

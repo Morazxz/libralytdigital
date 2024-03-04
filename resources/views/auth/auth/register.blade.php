@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body style="background-color: #dcdddd">
-
+    
     <div class="container">
         <div class="card position-absolute top-50 start-50 translate-middle rounded" style="width: 25rem; height: 19rem; border-radius: 17px">
             <div class="card-body" style="background-color: #f3f3f3;">

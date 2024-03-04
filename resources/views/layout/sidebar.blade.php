@@ -62,10 +62,10 @@
 
                     <ul class="submenu ">
 
-                        <li class="submenu-item  ">
-                            <a href="{{ url('admin/user') }}" class="submenu-link">
-                            <i class="bi bi-people-fill"></i>
-                            <span>Data User</span>
+                        <li class="submenu-item  {{ \Route::is('user.*') ? 'active' : '' }}">
+                            <a href="{{ route('user.index') }}" class="submenu-link">
+                                <i class="bi bi-people-fill"></i>
+                                <span>Data User</span>
                             </a>
                         </li>
 
@@ -93,7 +93,6 @@
 
 
                 </li>
-
                 <li class="sidebar-item">
                     <a href="{{ url('admin/profile') }}" class='sidebar-link'>
                         <i class="bi bi-person-circle"></i>

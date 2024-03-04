@@ -87,6 +87,7 @@
                     <div>
                         <h1>Selamat Datang</h1>
                         <h2>Di Perpustakaan Digital RBOOKS</h2>
+                        <a href="{{ route('register') }}" class="btn-get-started scrollto mx-3">Register</a>
                         <a href="{{ route('login') }}" class="btn-get-started scrollto">Login</a>
                     </div>
                 </div>
