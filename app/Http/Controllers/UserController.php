@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -51,7 +52,7 @@ class UserController extends Controller
                 ->route('user.index');
         }else{
             return redirect()->route('user.index');
-            
+
         }
     }
 
@@ -68,7 +69,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $model = User::findOrfail($id);
+        return view('admin.edit_user', compact('model'));
     }
 
     /**
@@ -76,7 +78,24 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $requestData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email,'.$id,
+            'role' => 'required',
+            'alamat' => 'required',
+            'password' => 'nullable',
+        ]);
+        $model = User::findOrFail($id);
+        if ($requestData['password'] == ""){
+            unset($requestData['password']);
+        }else{
+            $requestData['password'] = Hash::make($requestData['password']);
+        }
+        $model->fill($requestData);
+        $model->save();
+        return redirect()
+            ->route('user.index');
+
     }
 
     /**
@@ -84,6 +103,10 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $model = User::findOrFail($id);
+        $model->delete();
+        Alert::success('Hore!', 'data User berhasil dihapus!');
+        return redirect()
+            ->route('user.index');
     }
 }

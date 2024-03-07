@@ -70,13 +70,13 @@
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/buku') }}" class="submenu-link">
+                            <a href="{{ route('buku.index') }}" class="submenu-link">
                                 <i class="bi bi-book-half"></i>
                                 <span>Data Buku</span>
                             </a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/kategori') }}" class="submenu-link">Data Kategori</a>
+                            <a href="{{ route('kategori.index') }}" class="submenu-link">Data Kategori</a>
 
                         </li>
 

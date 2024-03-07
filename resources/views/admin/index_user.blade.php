@@ -31,7 +31,7 @@
                     </h5>
                     <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User</a>
                 </div>
-            
+
                 <div class="card-body">
                     <div class="table-responsive datatable-minimal">
                         <table class="table table-striped" id="table2">
@@ -50,8 +50,13 @@
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>
-                                            <a href="edit_user.html" class="btn btn-primary">Edit</a>
-                                            <a href="delete_user.html" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('user.edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                                            <form onsubmit="return confirm('Are you sure?')" class="d-inline" data-confirm-delete="true" id="deleteUser"
+                                                action="{{ route('user.destroy', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="{{ route('user.edit', $item->id) }}" class="btn btn-danger ">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty

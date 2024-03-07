@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Kategori extends Model
+class Koleksi extends Model
 {
-    protected $table = 'kategori';
+    protected $table = 'koleksi';
     use HasFactory;
 
     protected $fillable = [
-        'nm_kategori'
+        'id_buku',
+        'id_user',
     ];
-
-    public function buku()
-    {
-        return $this->hasMany(Buku::class);
-    }
 }

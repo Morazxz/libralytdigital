@@ -28,8 +28,9 @@
                     @endif
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" method="post"
+                            <form class="form form-vertical" action="{{ route('buku.store') }}" method="post"
                                 enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-body">
                                     <div class="row">
                                         @csrf
@@ -77,9 +78,11 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="formFile" class="form-label"><b>Kategori</b></label> <br>
-                                                <input class="form-check-input" name="kategori[]" type="checkbox"
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                </label>
+                                            <select name="id_kategori" id="" class="form-control">
+                                                @foreach ($kategori as $k)
+                                                    <option value="{{ $k->id }}">{{ $k->nm_kategori }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -89,20 +92,12 @@
                                                 name="stok" placeholder="Stok">
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class='form-check'>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="checkbox3" class='form-check-input' checked>
-                                                <label for="checkbox3">Remember Me</label>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                     </div>
                                 </div>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,15 @@
                 <div class="card-header">
                     <h4 class="card-title">Create User</h4>
                 </div>
-
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-body">
                     <form action="{{ route('user.store') }}" method="post">
                         @method('POST')
@@ -67,7 +75,7 @@
 
                             <div class="form-group">
                                 <label for="disabledInput">Alamat</label>
-                                <input type="text" class="form-control" id="" placeholder="Alamat">
+                                <input type="text" name="alamat" class="form-control" id="" placeholder="Alamat">
                                 @error('alamat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
