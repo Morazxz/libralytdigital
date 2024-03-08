@@ -3,6 +3,6 @@
         <p>2023 &copy; Mazer</p>
     </div>
     <div class="float-end">
-        <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
+        <p>Rafli Aldiansyah Mora <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
     </div>
 </div>

@@ -45,14 +45,14 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{ url('petugas/dashboardpet') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
 
 
                 </li>
-                <li class="sidebar-title">Peminjam</li>
+                <li class="sidebar-title">Petugas</li>
 
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
@@ -62,21 +62,18 @@
 
                     <ul class="submenu ">
 
-                        <li class="submenu-item  ">
-                            <a href="{{ route('buku-peminjam.index') }}" class="submenu-link">Daftar Buku</a>
-
-                        </li>
-
-                        <li class="submenu-item  ">
-                            <a href={{ url('admin/kategori') }} class="submenu-link">Data Kategori</a>
-                        </li>
 
                         <li class="submenu-item  ">
                             <a href="ui-widgets-pricing.html" class="submenu-link">Buku Pinjaman</a>
 
                         </li>
                         <li class="submenu-item  ">
-                            <a href="ui-widgets-pricing.html" class="submenu-link">Koleksi buku</a>
+                            <a href="{{ url('peminjam/koleksi_buku') }}" class="submenu-link">Koleksi buku</a>
+
+                        </li>
+
+                        <li class="submenu-item  ">
+                            <a href="{{ url('peminjam/detail_buku') }}" class="submenu-link">Detail buku</a>
 
                         </li>
                     </ul>
@@ -93,7 +90,7 @@
 
                 </li>
                 <li class="sidebar-item">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{ url('login') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Logout</span>
                     </a>

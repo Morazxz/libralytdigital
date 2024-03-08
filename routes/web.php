@@ -1,14 +1,15 @@
 <?php
 
 use App\Models\Buku;
-use App\Http\Controllers\BerandaAdminController;
-use App\Http\Controllers\BerandaPeminjamController;
-use App\Http\Controllers\BerandaPetugasController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\BukuController;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\BerandaAdminController;
+use App\Http\Controllers\BukuPeminjamController;
+use App\Http\Controllers\BerandaPetugasController;
+use App\Http\Controllers\BerandaPeminjamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,11 @@ Route::prefix('petugas')->middleware(['auth', 'auth.petugas'])->group(function (
 });
 Route::prefix('peminjam')->middleware(['auth', 'auth.peminjam'])->group(function () {
     Route::get('beranda', [BerandaPeminjamController::class, 'index'])->name('peminjam.beranda');
+    Route::get('pengembalian', [BerandaPeminjamController::class, 'pengembalian'])->name('peminjam.pengembalian');
+    Route::get('peminjaman', [BerandaPeminjamController::class, 'peminjaman'])->name('peminjam.peminjaman');
+    Route::get('dataPeminjaman', [PeminjamController::class, 'dataPeminjaman'])->name('dataPeminjaman');
+    Route::resource('buku-peminjam', BukuPeminjamController::class);
+
 });
 
 Route::get('logout', function () {

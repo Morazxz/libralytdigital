@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Dompdf\Dompdf;
+
 use App\Models\User;
 use App\Models\Peminjaman;
 use Illuminate\Http\Request;
